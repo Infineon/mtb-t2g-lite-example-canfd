@@ -20,7 +20,7 @@ This code example demonstrates how to use controller area network flexible data-
 
 ## Supported kits (make variable 'TARGET')
 
-- TRAVEO™ T2G body high evaluation kit (`KIT_T2G_B-H_LITE`) - Default value of `TARGET`
+- TRAVEO™ T2G body high evaluation kit (`KIT_T2G-B-H_LITE`) - Default value of `TARGET`
 
 
 ## Hardware setup
@@ -35,7 +35,7 @@ Use jumper wires to establish a connection between CAN Node-1 and CAN Node-2. Pi
 
 | Development kit | CAN_RX | CAN_TX | Ground |
 | - | - | - | - |
-| KIT_T2G_B-H_LITE | P12.1 | P12.0 | GND |
+| KIT_T2G-B-H_LITE | P12.1 | P12.0 | GND |
 
 1. Connect CANL (J5[1]) pin of NODE-1 and NODE-2 using jumper wires.
 
