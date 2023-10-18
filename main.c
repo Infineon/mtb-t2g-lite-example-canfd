@@ -1,13 +1,13 @@
 /******************************************************************************
 * File Name: main.c
 *
-* Description: This is the source code for the XMC7000 MCU CANFD example 
+* Description: This is the source code for the T2G MCU CANFD example 
 * for ModusToolbox.
 *
 * Related Document: See README.md
 *
 *******************************************************************************
-* Copyright 2022, Cypress Semiconductor Corporation (an Infineon company) or
+* Copyright 2022-2023, Cypress Semiconductor Corporation (an Infineon company) or
 * an affiliate of Cypress Semiconductor Corporation.  All rights reserved.
 *
 * This software, including source code, documentation and related
@@ -88,14 +88,14 @@ void isr_button (void);
 /* This structure initializes the CANFD interrupt for the NVIC */
 cy_stc_sysint_t canfd_irq_cfg =
 {
-    .intrSrc  = (NvicMux2_IRQn << 16) | CANFD_IRQ_0, /* Source of interrupt signal */
+    .intrSrc  = (NvicMux2_IRQn << CY_SYSINT_INTRSRC_MUXIRQ_SHIFT) | CANFD_IRQ_0, /* Source of interrupt signal */
     .intrPriority = 1U, /* Interrupt priority */
 };
 
 /* This structure initializes the button interrupt for the NVIC */
 cy_stc_sysint_t button_intr_config =
 {
-    .intrSrc  = (NvicMux2_IRQn << 16) | CYBSP_USER_BTN_IRQ,
+    .intrSrc  = (NvicMux2_IRQn << CY_SYSINT_INTRSRC_MUXIRQ_SHIFT) | CYBSP_USER_BTN_IRQ,
     .intrPriority = 0U,
 };
 

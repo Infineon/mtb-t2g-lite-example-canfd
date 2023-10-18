@@ -1,27 +1,27 @@
+<img src="./images/IFX_LOGO_600.gif" align="right" width="150"/>
+
 # TRAVEO™ T2G MCU: CAN FD
 
 This code example demonstrates how to use controller area network flexible data-rate (CAN FD) in TRAVEO™ T2G MCU devices. In this example, the CAN Node-1 sends a CAN FD or standard frame to CAN Node-2 on pressing the user button and vice versa. Both the CAN nodes log the received data over UART serial terminal. Each time a CAN frame is received, the user LED toggles.
 
-[View this README on GitHub.](https://github.com/Infineon/name-mtb-t2g-lite-example-canfd)
+[View this README on GitHub.](https://github.com/Infineon/mtb-t2g-lite-example-canfd)
 
 ## Requirements
 
-- [ModusToolbox&trade; software](https://www.infineon.com/modustoolbox) v3.0 or later (tested with v3.0)
+- [ModusToolbox&trade; software](https://www.infineon.com/modustoolbox) v3.0 or later (tested with v3.1)
 - Programming language: C
-- Associated parts: [TRAVEO™ T2G body high MCU](https://www.infineon.com/cms/en/product/microcontroller/32-bit-traveo-t2g-arm-cortex-microcontroller/32-bit-traveo-t2g-arm-cortex-for-body/traveo-t2g-cyt4bf-series/)
-
+- Associated parts: [TRAVEO™ T2G body high MCU](https://www.infineon.com/cms/en/product/microcontroller/32-bit-traveo-t2g-arm-cortex-microcontroller/32-bit-traveo-t2g-arm-cortex-for-body/traveo-t2g-cyt4bf-series/), and [TRAVEO™ T2G Body Entry MCU](https://www.infineon.com/cms/en/product/microcontroller/32-bit-traveo-t2g-arm-cortex-microcontroller/32-bit-traveo-t2g-arm-cortex-for-body/traveo-t2g-cyt2bl-series/)
 
 ## Supported toolchains (make variable 'TOOLCHAIN')
 
-- GNU Arm&reg; embedded compiler v10.3.1 (`GCC_ARM`) - Default value of `TOOLCHAIN`
+- GNU Arm&reg; embedded compiler v11.3 (`GCC_ARM`) - Default value of `TOOLCHAIN`
 - Arm&reg; compiler v6.16 (`ARM`)
 - IAR C/C++ compiler v9.30.1 (`IAR`)
 
-
 ## Supported kits (make variable 'TARGET')
 
-- TRAVEO™ T2G body high evaluation kit (`KIT_T2G-B-H_LITE`) - Default value of `TARGET`
-
+- [TRAVEO™ T2G body high evaluation kit](https://www.infineon.com/cms/en/product/evaluation-boards/kit_t2g-b-h_lite/) (`KIT_T2G-B-H_LITE`) - Default value of `TARGET`
+- [TRAVEO™ T2G body entry evaluation kit](https://www.infineon.com/cms/en/product/evaluation-boards/kit_t2g-b-e_lite/) (`KIT_T2G-B-E_LITE`)
 
 ## Hardware setup
 
@@ -36,17 +36,15 @@ Use jumper wires to establish a connection between CAN Node-1 and CAN Node-2. Pi
 | Development kit | CAN_RX | CAN_TX | Ground |
 | - | - | - | - |
 | KIT_T2G-B-H_LITE | P12.1 | P12.0 | GND |
+| KIT_T2G-B-E_LITE | P12.1 | P12.0 | GND |
 
 1. Connect CANL (J5[1]) pin of NODE-1 and NODE-2 using jumper wires.
 
 2. Connect CANH (J5[2]) pin of NODE-1 and NODE-2 using jumper wires.
 
-
 ## Software setup
 
-
 Install a terminal emulator if you don't have one. Instructions in this document use [Tera Term](https://ttssh2.osdn.jp/index.html.en).
-
 
 ## Using the code example
 
@@ -142,9 +140,7 @@ For a list of supported IDEs and more details, see the "Exporting to IDEs" secti
 
 </details>
 
-
 ## Operation
-
 
 1. Connect the CAN pins of the [Supported kits](#supported-kits-make-variable-target) using the instructions in the [Hardware setup](#hardware-setup) section.
 
@@ -212,8 +208,6 @@ In this code example, the TRAVEO™ T2G CAN FD block is configured. On pressing 
 | Controller Area Network FD (CAN FD) 0 | CANFD | To generate CAN frames |
 
 
-
-
 ## Related resources
 
 Resources  | Links
@@ -221,7 +215,7 @@ Resources  | Links
 Application notes | AN235305 - GETTING STARTED WITH TRAVEO™ T2G FAMILY MCUS IN MODUSTOOLBOX™ <br> [AN220278](https://www.infineon.com/dgdl/Infineon-AN220278_How_to_Use_CAN_FD_in_Traveo_II_Family-ApplicationNotes-v05_00-EN.pdf?fileId=8ac78c8c7cdc391c017d0d3e20bd67b2) - How to Use CAN FD in Traveo II Family
 Training  | [TRAVEO™ T2G CAN FD controller](https://www.infineon.com/dgdl/Infineon-Traveo_II_CAN_FD_Controller-Training-v04_00-EN.pdf?fileId=8ac78c8c7d718a49017d9f6cec3f3b25)
 Code examples  | [TRAVEO™ T2G MCU examples](https://github.com/orgs/Infineon/repositories?q=mtb-t2g-&type=all&language=&sort=) on GitHub
-Device documentation | [Device datasheet](https://www.cypress.com/documentation/datasheets/cyt4bf-datasheet-32-bit-arm-cortex-m7-microcontroller-traveo-ii-family) <br> [Architecture Technical reference manuals (TRM)](https://www.cypress.com/documentation/technical-reference-manuals/traveo-ii-automotive-body-controller-high-family) <br> [Registers TRM](https://www.cypress.com/documentation/technical-reference-manuals/traveo-t2g-tvii-b-h-8m-registers-body-controller-high)
+Device documentation | [Device datasheet](https://www.infineon.com/dgdl/?fileId=5546d46275b79adb0175dc8387f93228) for CYT4BF<br> [Architecture Technical reference manuals (TRM)](https://www.cypress.com/documentation/technical-reference-manuals/traveo-ii-automotive-body-controller-high-family) for TRAVEO™ T2G body high series<br> [Registers TRM](https://www.cypress.com/documentation/technical-reference-manuals/traveo-t2g-tvii-b-h-8m-registers-body-controller-high) for CYT4BF<br> [Device datasheet](https://www.infineon.com/dgdl/?fileId=8ac78c8c82ce566401836c4d5e9a46c8) for CYT2BL<br> [Architecture Technical reference manuals (TRM)](https://www.infineon.com/dgdl/?fileId=5546d462766cbe860176804ea8d27e9b) for TRAVEO™ T2G body entry series
 Libraries on GitHub | [mtb-pdl-cat1](https://github.com/Infineon/mtb-pdl-cat1) – Peripheral driver library (PDL)  <br> [mtb-hal-cat1](https://github.com/Infineon/mtb-hal-cat1) – Hardware abstraction layer (HAL) library <br> [retarget-io](https://github.com/Infineon/retarget-io) – Utility library to retarget STDIO messages to a UART port
 Middleware on GitHub  | [mcu-middleware](https://github.com/Infineon/modustoolbox-software) – Links to all MCU middleware
 Tools  | [Eclipse IDE for ModusToolbox&trade; software](https://www.infineon.com/modustoolbox) – ModusToolbox&trade; software is a collection of easy-to-use software and tools enabling rapid development with Infineon MCUs, covering applications from embedded sense and control to wireless and cloud-connected systems using AIROC&trade; Wi-Fi and Bluetooth® connectivity devices.
@@ -232,14 +226,16 @@ Tools  | [Eclipse IDE for ModusToolbox&trade; software](https://www.infineon.com
 
 Infineon provides a wealth of data at www.infineon.com to help you select the right device, and quickly and effectively integrate it into your design.
 
-For TRAVEO™ T2G body high MCU devices, see [TRAVEO™ T2G CYT4BF Series](https://www.infineon.com/cms/en/product/microcontroller/32-bit-traveo-t2g-arm-cortex-microcontroller/32-bit-traveo-t2g-arm-cortex-for-body/traveo-t2g-cyt4bf-series/).
-
+For TRAVEO™ T2G body high MCU devices, see [TRAVEO™ T2G CYT4BF Series](https://www.infineon.com/cms/en/product/microcontroller/32-bit-traveo-t2g-arm-cortex-microcontroller/32-bit-traveo-t2g-arm-cortex-for-body/traveo-t2g-cyt4bf-series/), and For TRAVEO™ T2G body entry MCU devices, see [TRAVEO™ T2G CYT2BL Series](https://www.infineon.com/cms/en/product/microcontroller/32-bit-traveo-t2g-arm-cortex-microcontroller/32-bit-traveo-t2g-arm-cortex-for-body/traveo-t2g-cyt2bl-series/)
 
 ## Document history
 
  Version | Description of change
  ------- | ---------------------
- 1.0.0   | New code example
+| 1.0.0   | New code example. |
+| 1.1.0   | Added support for KIT_T2G-B-E_LITE|
+
+------
 <br />
 
 ---------------------------------------------------------
